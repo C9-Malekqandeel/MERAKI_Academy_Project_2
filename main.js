@@ -211,6 +211,8 @@ startADD()
 
 const box_item = $('.items')
 
+const cart = []
+
 const render = (product)=> {
     for (let index = 0; index < product.length; index++) {
         const img = $(`<img ${product[index].imageSrc} alt="">`);
@@ -224,8 +226,35 @@ const render = (product)=> {
         card.on('click',()=>{
             $('.main-page').hide();
             const item_page = $('.item-page')
+            const title_item = $(`<h1>${product[index].title}</h1>`);
+           /*  title_item.css({
+                'color': rgb(25, 27, 27),
+                'margin-top': 0,
+                'margin-bottom': 2%
+                'font-size': 'x-large',
+                'font-weight': 'bold',
+            }) */
             const img_item = $(`<img ${product[index].imageSrc} alt="">`);
-            item_page.append(img_item)
+            const description_item = $(`<h1>${product[index].description}</h1>`);
+            const amount_item = $(`<h1>${product[index].amount}</h1>`);
+            const btn1 = $(`<button class="cart"> Add to Cart</button>`);
+            const btn2 = $(`<button class="cart"> Add to WishCart</button>`);
+
+
+
+            item_page.append(title_item);
+            item_page.append(img_item);
+            item_page.append(amount_item)
+            item_page.append(btn1);
+            item_page.append(btn2);
+            item_page.append(description_item)
+
+
+
+
+            // same here for every Detilas of item ! + button for add to cart
+
+            // butten for back to main page!
 
 
 
