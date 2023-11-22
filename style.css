@@ -1,15 +1,33 @@
 body{
-    background-color: aqua;
+    background-color: rgb(224, 240, 240);
 }
 
 .header {
     background-color: aquamarine;
+    display: flex;
+    padding-left: 5%;
+    color: rgb(25, 27, 27);
     margin-top: 0;
+    margin-bottom: 2%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.animation{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px 100px;
+    width: 100%;
+    height: 450px;
 }
 #anim-1 {
-    width: 400px;
+    width: 120vw;
     height: 420px;
     overflow: hidden;
+}
+.anim-2{
+    width: 200px;
+}
+.anim-3{
+    width: 200px;
 }
 .ADDs {
     display: block;
@@ -21,4 +39,6 @@ body{
 .ADD {
     float: left;
     list-style-type: none;
+    width: 450px;
+    height: 420px;
 }

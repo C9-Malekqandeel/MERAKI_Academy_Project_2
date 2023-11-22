@@ -121,6 +121,7 @@ const product = [
 
 ]
 console.log(product.length);
+
 //---------------
 
 const Clothing = []
