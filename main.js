@@ -227,36 +227,85 @@ const render = (product)=> {
             $('.main-page').hide();
             const item_page = $('.item-page')
             const title_item = $(`<h1>${product[index].title}</h1>`);
-           /*  title_item.css({
-                'color': rgb(25, 27, 27),
+            const box = $(`<div></div>`)
+            const inner_box = $(`<div></div>`)
+
+           title_item.css({
+                'color': 'black',
                 'margin-top': 0,
-                'margin-bottom': 2%
-                'font-size': 'x-large',
+                'margin-bottom': '2%',
+                'font-size': 'xxx-large',
                 'font-weight': 'bold',
-            }) */
+            })
             const img_item = $(`<img ${product[index].imageSrc} alt="">`);
             const description_item = $(`<h1>${product[index].description}</h1>`);
             const amount_item = $(`<h1>${product[index].amount}</h1>`);
             const btn1 = $(`<button class="cart"> Add to Cart</button>`);
+            const btn3 = $(`<button class="cart"> Home Page</button>`);
             const btn2 = $(`<button class="cart"> Add to WishCart</button>`);
-
-
+            box.css({
+                'border':'5px solid black',
+                'display': "grid",
+                'grid-template-columns': 'repeat(2, 1fr)',
+                'grid-template-rows': "1ft 2ft",
+            })
+            img_item.css({
+                'width':"400px",
+                'height':"400px",
+                'margin':'120px',
+                'margin-top':'50px'
+            })
+            description_item.css({
+                'border':'5px solid black',
+                'padding':'50px',
+                'display': 'flex'
+            })
+            amount_item.css({
+                'font-size': 'xxx-large',
+                'font-weight': 'bold',
+            })
 
             item_page.append(title_item);
-            item_page.append(img_item);
-            item_page.append(amount_item)
-            item_page.append(btn1);
-            item_page.append(btn2);
-            item_page.append(description_item)
+            item_page.append(box);
+            box.append(img_item);
+            box.append(inner_box);
+            inner_box.append(amount_item)
+            inner_box.append(btn1);
+            inner_box.append(btn2);
+            item_page.append(description_item);
+            description_item.append(btn3);
 
+            btn1.css({
+                'background-color': 'yellow',
+                'padding': '25px',
+                'font-size': 'x-large',
+                'font-weight': 'bold',
+                'border': '10px solid black',
+            })
+            btn2.css({
+                'background-color': 'yellow',
+                'padding': '25px',
+                'font-size': 'x-large',
+                'font-weight': 'bold',
+                'border': '10px solid black',
+                'margin-left':"20px"
+            })
+            btn3.css({
+                'background-color': 'blue',
+                'padding': '25px',
+                'font-size': 'x-large',
+                'font-weight': 'bold',
+                'border': '2 px solid black',
+                'margin': '20px'
+            })
 
+            const next_page = function(){
+                $('.main-page').show();
+                $('.item-page').hide()
+            }
 
-
-            // same here for every Detilas of item ! + button for add to cart
-
-            // butten for back to main page!
-
-
+            btn3.on('click',next_page)
+            $('.item-page').show()
 
         })
         box_item.append(card);
