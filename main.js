@@ -187,20 +187,29 @@ console.log(Diapering);
 
 //----------------
 
+const anim = $('.anim-1')
 const ADDs = $('.ADDs');
-const ADD = ADDs.find('.ADD');
+const ADD = $('.ADD');
+let current = 0;
 
 const startADD = ()=>{
     let interval = setInterval(() => {
-        ADDs.animate()
-    }, interval);
+        ADDs.animate({'margin-top':"-=400px"},1000)
+        current++
+        if(current === 5){
+            current=0
+            // ADDs.css('margin-top':"0")
+        }
+        console.log(current);
+    },5000);
+
+    // setInterval(show,2000)
 }
+startADD()
 
 //----------------------
-const main_items = $('item')
-const img_item = $('#img')
-const title_item = $('#title')
-const box_item = $('.item')
+
+const box_item = $('.items')
 
 const render = (product)=> {
     for (let index = 0; index < product.length; index++) {
@@ -209,8 +218,18 @@ const render = (product)=> {
         const card = $(`
         <div class="item">
         <div id="img"><img ${product[index].imageSrc} alt=""></div>
-        <div id="title"><h3>${product[index].title}</h3></div>
+        <div id="title"><h3>${product[index].title}</h3>    
+        </div>
     </div>`)
+        card.on('click',()=>{
+            $('.main-page').hide();
+            const item_page = $('.item-page')
+            const img_item = $(`<img ${product[index].imageSrc} alt="">`);
+            item_page.append(img_item)
+
+
+
+        })
         box_item.append(card);
     }
 }
@@ -218,3 +237,6 @@ render(product);
 
 
 //------------------------
+//$('.main-page').hide();
+
+
