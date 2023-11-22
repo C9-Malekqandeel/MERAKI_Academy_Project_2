@@ -196,3 +196,25 @@ const startADD = ()=>{
     }, interval);
 }
 
+//----------------------
+const main_items = $('item')
+const img_item = $('#img')
+const title_item = $('#title')
+const box_item = $('.item')
+
+const render = (product)=> {
+    for (let index = 0; index < product.length; index++) {
+        const img = $(`<img ${product[index].imageSrc} alt="">`);
+        const title = $(`<h3>${product[index].title}</h3>`);
+        const card = $(`
+        <div class="item">
+        <div id="img"><img ${product[index].imageSrc} alt=""></div>
+        <div id="title"><h3>${product[index].title}</h3></div>
+    </div>`)
+        box_item.append(card);
+    }
+}
+render(product);
+
+
+//------------------------
