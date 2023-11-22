@@ -68,3 +68,7 @@ body{
     border:5px solid yellow;
     justify-content: center;
 }
+.icon {
+    margin-left: 80%;
+    margin-top: 10px;
+}

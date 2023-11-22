@@ -211,7 +211,11 @@ startADD()
 
 const box_item = $('.items')
 
-const cart = []
+const cart = [];
+const cart_box = $('.cart')
+
+
+const wishCart = [];
 
 const render = (product)=> {
     for (let index = 0; index < product.length; index++) {
@@ -300,21 +304,46 @@ const render = (product)=> {
             })
 
             const next_page = function(){
+                $('.item-page').html("")
                 $('.main-page').show();
-                $('.item-page').hide()
             }
 
             btn3.on('click',next_page)
             $('.item-page').show()
 
+            btn1.on('click',()=>{
+                cart.push(product[index])
+                console.log(product[index]);            })
+            btn2.on('click',()=>{
+                wishCart.push(product[index])
+            })
+
         })
         box_item.append(card);
+       
     }
 }
 render(product);
 
 
 //------------------------
-//$('.main-page').hide();
 
+const icon = $('.icon');
+icon.on('click',()=>{
+    $('.item-page').html("");
+    $('.main-page').hide();
+    console.log(cart);
+    for (let index = 0; index < cart.length; index++) {
+        const box_cart = $(`<div></div>`);
+        const img = $(`<img ${cart[index].imageSrc} alt="">`)
+        const title_cart = $(`<h3>${cart[index].title}</h3>`)
+        const amount = $(`<h3>${cart[index].amount}</h3>`)
+        box_cart.append(img);
+        box_cart.append(title_cart);
+        box_cart.append(amount);
+        cart_box.append(box_cart);
+    }
+    
+
+})
 
