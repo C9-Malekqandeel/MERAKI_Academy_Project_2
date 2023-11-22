@@ -338,10 +338,15 @@ icon.on('click',()=>{
         const img = $(`<img ${cart[index].imageSrc} alt="">`)
         const title_cart = $(`<h3>${cart[index].title}</h3>`)
         const amount = $(`<h3>${cart[index].amount}</h3>`)
+        const btn_delete_cart = $(`<button>Remove</button>`)
         box_cart.append(img);
         box_cart.append(title_cart);
         box_cart.append(amount);
+        box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
+        btn_delete_cart.on('click', ()=>{
+            // splice
+        })
     }
     
 
