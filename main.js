@@ -200,7 +200,6 @@ const startADD = ()=>{
             current=0
             // ADDs.css('margin-top':"0")
         }
-        console.log(current);
     },5000);
 
     // setInterval(show,2000)
@@ -240,7 +239,6 @@ const render = (product)=> {
 
 
     createBtn.on('click',()=>{
-        console.log(product[index]);  
         let toString = JSON.stringify(product[index]);
         localStorage.setItem(product[index].title,toString)
         cart.push( product[index])
@@ -369,26 +367,33 @@ const icon = $('.icon');
 icon.on('click',()=>{
     $('.item-page').html("");
     $('.main-page').hide();
-    console.log(cart);
 let amount = 0
-    for (let index = 0; index < cart.length; index++) {
+    for (let index = 0; index < localStorage.length; index++) {
         console.log(localStorage);
+        const nameLine = localStorage.key(index);
+        console.log(nameLine);
+        const itemCart =JSON.parse(localStorage.getItem(nameLine));
+        console.log(itemCart);
+
         const box_cart = $(`<div></div>`);
-        const img = $(`<img ${cart[index].imageSrc} alt="">`)
-        const title_cart = $(`<h3>${cart[index].title}</h3>`)
-        const amount = $(`<h3>${cart[index].amount}</h3>`)
+        const img = $(`<img ${itemCart.imageSrc} alt="">`)
+        const title_cart = $(`<h3>${itemCart.title}</h3>`)
+        const amount = $(`<h3>${itemCart.amount}</h3>`)
         const btn_delete_cart = $(`<button>Remove</button>`)
         box_cart.append(img);
         box_cart.append(title_cart);
         box_cart.append(amount);
         box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
-        btn_delete_cart.on('click', ()=>{
-            cart.splice(1,1,cart[index])
-            console.log(cart);
+        btn_delete_cart.on('click', function(){
+            console.log(itemCart);
+            cart.splice(1,1,itemCart)
             box_cart.html('')
-            amount = amount + cart[index].amount
-            console.log(cart[index].amount);
+            //amount = amount + cart[index].amount
+            localStorage.removeItem(nameLine)
+            // How can i deal the local Storage as array ??
+
+
             
         })
         const totalAmount = $(`<h1>${amount}</h1>`)
@@ -418,3 +423,6 @@ const memory = (cart)=>{
     }
 }
 memory(cart) */
+
+console.log(localStorage.key(0));
+console.log(localStorage.getItem(localStorage.key(0)));
