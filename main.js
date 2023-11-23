@@ -1,7 +1,7 @@
 const product = [
     {
         id:1 ,
-        title: " Baby Boys And Girls Casual Cute Knit Sock Shoes, Soft Sole Non-slip Thick Fleece Thermal Toddler Shoes",
+        title: "Casual Cute Knit Sock Shoes",
         imageSrc : "src='./pictures of items/Baby Boys And Girls Casual Cute Knit Sock Shoes, Soft Sole Non-slip Thick Fleece Thermal Toddler Shoes.jpg'",
         description :"Baby Boys And Girls Casual Cute Knit Sock Shoes, Soft Sole Non-slip Thick Fleece Thermal Toddler Shoes For Winter Walking",
         amount : 'JOD 3.27',
@@ -223,10 +223,12 @@ const render = (product)=> {
         const title = $(`<h3>${product[index].title}</h3>`);
         const card = $(`
         <div class="item">
-        <div id="img"><img ${product[index].imageSrc} alt=""></div>
-        <div id="title"><h3>${product[index].title}</h3>    
+        <div ><img id="imgMain" ${product[index].imageSrc} alt=""></div>
+        <div id="titleMain"><h3>${product[index].title}</h3>    
         </div>
     </div>`)
+
+    
         card.on('click',()=>{
             $('.main-page').hide();
             const item_page = $('.item-page')
@@ -257,7 +259,7 @@ const render = (product)=> {
                 'width':"400px",
                 'height':"400px",
                 'margin':'120px',
-                'margin-top':'50px'
+                'margin-top':'50px',
             })
             description_item.css({
                 'border':'5px solid black',
@@ -311,9 +313,16 @@ const render = (product)=> {
             btn3.on('click',next_page)
             $('.item-page').show()
 
+            localStorage.setItem("item",product[index])
+
+
             btn1.on('click',()=>{
-                cart.push(product[index])
-                console.log(product[index]);            })
+                console.log(product[index]);  
+                let toString = JSON.stringify(product[index]);
+                localStorage.setItem(product[index].title,toString)
+                cart.push( product[index])
+                
+                    })
             btn2.on('click',()=>{
                 wishCart.push(product[index])
             })
@@ -334,6 +343,7 @@ icon.on('click',()=>{
     $('.main-page').hide();
     console.log(cart);
     for (let index = 0; index < cart.length; index++) {
+        console.log(localStorage);
         const box_cart = $(`<div></div>`);
         const img = $(`<img ${cart[index].imageSrc} alt="">`)
         const title_cart = $(`<h3>${cart[index].title}</h3>`)
@@ -352,3 +362,23 @@ icon.on('click',()=>{
 
 })
 
+//------------
+const home = $('.home');
+home.on('click', ()=>{
+    $('.item-page').html("");
+    $('.main-page').show();
+    $('.cart').html("");
+
+})
+
+
+
+/* 
+const memory = (cart)=>{
+    for (let index = 0; index < cart.length; index++) {
+        console.log(cart[index]);
+        let toString = JSON.stringify(cart[index]);
+        localStorage.setItem('item',toString)
+    }
+}
+memory(cart) */
