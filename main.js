@@ -223,12 +223,40 @@ const render = (product)=> {
         const title = $(`<h3>${product[index].title}</h3>`);
         const card = $(`
         <div class="item">
-        <div ><img id="imgMain" ${product[index].imageSrc} alt=""></div>
-        <div id="titleMain"><h3>${product[index].title}</h3>    
+        <img id="imgMain" ${product[index].imageSrc} alt="">
+        <div id="titleMain"><h3>${product[index].title}</h3> 
         </div>
     </div>`)
+    const itemClick = $('.item')
+    const cartAdd = $('#cartMain');
+    const createBtn = $(`<button id="cartMain"> Add to Cart</button>`)
 
-    
+    card.on('mouseover',()=>{
+        card.append(createBtn);
+    })
+
+    const boxMessage = $('.boxCart');
+    boxMessage.hide()
+
+
+    createBtn.on('click',()=>{
+        console.log(product[index]);  
+        let toString = JSON.stringify(product[index]);
+        localStorage.setItem(product[index].title,toString)
+        cart.push( product[index])
+        card.off('click')
+
+        boxMessage.show()
+            })
+
+        const backHome = $('#back')
+        const removeClass = ()=>{
+            boxMessage.hide()
+        }
+        backHome.on('click',removeClass)
+
+
+
         card.on('click',()=>{
             $('.main-page').hide();
             const item_page = $('.item-page')
@@ -342,6 +370,7 @@ icon.on('click',()=>{
     $('.item-page').html("");
     $('.main-page').hide();
     console.log(cart);
+let amount = 0
     for (let index = 0; index < cart.length; index++) {
         console.log(localStorage);
         const box_cart = $(`<div></div>`);
@@ -355,8 +384,15 @@ icon.on('click',()=>{
         box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
         btn_delete_cart.on('click', ()=>{
-            // splice
+            cart.splice(1,1,cart[index])
+            console.log(cart);
+            box_cart.html('')
+            amount = amount + cart[index].amount
+            console.log(cart[index].amount);
+            
         })
+        const totalAmount = $(`<h1>${amount}</h1>`)
+        box_cart.append(totalAmount)
     }
     
 
