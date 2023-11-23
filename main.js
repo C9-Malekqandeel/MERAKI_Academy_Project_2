@@ -4,7 +4,8 @@ const product = [
         title: "Casual Cute Knit Sock Shoes",
         imageSrc : "src='./pictures of items/Baby Boys And Girls Casual Cute Knit Sock Shoes, Soft Sole Non-slip Thick Fleece Thermal Toddler Shoes.jpg'",
         description :"Baby Boys And Girls Casual Cute Knit Sock Shoes, Soft Sole Non-slip Thick Fleece Thermal Toddler Shoes For Winter Walking",
-        amount : 'JOD 3.27',
+        amount : 'Price : JOD 3.27',
+        Price : 3.27,
         category: "Clothing"
     },
     {
@@ -12,7 +13,8 @@ const product = [
         title: " Baby sleeveless",
         imageSrc : 'src="./pictures of items/baby sleeves.jpg"',
         description :"Summer Solid Short-sleeved Baby Bodysuit Cotton Soft 0-12Months Unisex Infant Clothes",
-        amount : 'JOD 3.75',
+        amount : 'Price :JOD 3.75',
+        Price : 3.75,
         category: "Clothing"
     },
     
@@ -21,7 +23,8 @@ const product = [
         title: " Blended Tights Set",
         imageSrc : 'src="./pictures of items/blended tights.jpg"',
         description :"Cool Club Blended Tights Set, White Color, 2 Pieces",
-        amount : 'JOD 2.69',
+        amount : 'Price :JOD 2.69',
+        price:2.69,
         category: "Clothing"
     },
 
@@ -31,7 +34,8 @@ const product = [
         title: " Baby Jackets",
         imageSrc : 'src="./pictures of items/jacket.jpg"',
         description :"New Baby Boys Cute Graphic Hooded Padded Coat, Kids Warm Zip Up Long Sleeve Jacket, Winter/fall",
-        amount : 'JOD 11.25',
+        amount : 'Price :JOD 11.25',
+        price:11.25,
         category: "Clothing"
     },
 
@@ -40,7 +44,8 @@ const product = [
         title: " Knitted Sweater",
         imageSrc : 'src="./pictures of items/sweater.jpg"',
         description :"Baby Boy's Knit Sweater, All-match Warm Casual Pullover Top For Outdoor Travel",
-        amount : 'JOD 13.12',
+        amount : 'Price :JOD 13.12',
+        price:13.12,
         category: "Clothing"
     },
     {
@@ -48,7 +53,8 @@ const product = [
         title: "Children Home Slipper",
         imageSrc : 'src="./pictures of items/slipper.jpg"',
         description :"Cool Club Children Home Slipper, Christmas Design, Color : Light Grey,Gender: Both,recommended age : 4-5 years , size : 27-28",
-        amount : 'JOD 4.35',
+        amount : 'Price :JOD 4.35',
+        price:4.35,
         category: "Clothing"
     },
     {
@@ -56,7 +62,8 @@ const product = [
         title: "Baby Bottle",
         imageSrc : 'src="./pictures of items/bottle.jpg"',
         description :"The Perfect Nursing Bottle for Newborns: Keep Baby Safe While Drinking Water & Milk!",
-        amount : 'JOD 2.54',
+        amount : 'Price :JOD 2.54',
+        price:2.54,
         category: "Feeding"
     },
     {
@@ -64,7 +71,8 @@ const product = [
         title: "cups & water Bottle",
         imageSrc : 'src="./pictures of items/cups.jpg"',
         description :"Baby Learning Drinking Cup, Baby Sippy Cup, BPA Free",
-        amount : 'JOD 3.85',
+        amount : 'Price :JOD 3.85',
+        price:3.85,
         category: "Feeding"
     },
     {
@@ -72,7 +80,8 @@ const product = [
         title: "Food Storage and Containers",
         imageSrc : 'src="./pictures of items/storage.jpg"',
         description :"Baby Formula Dispenser, 4 Layers Stackable Formula Container, Milk Powder Formula Dispenser, Baby Feeding Travel Storage Container, BPA Free",
-        amount : 'JOD 5.25',
+        amount : 'Price :JOD 5.25',
+        price:5.25,
         category: "Feeding"
     },
 
@@ -81,7 +90,8 @@ const product = [
         title: "Nipples",
         imageSrc : 'src="./pictures of items/nipple.jpg"',
         description :"Tommee Tippee Closer To Nature Teats Nipples Fast Flow Teats 6m+ (Pack of 2)",
-        amount : 'JOD 2.85',
+        amount : 'Price :JOD 2.85',
+        price:2.85,
         category: "Feeding"
     },
 
@@ -90,7 +100,8 @@ const product = [
         title: "BabyJem Safety Belt - Black",
         imageSrc : 'src="./pictures of items/jem.jpg"',
         description :"This First steps Safety Reins allow you to help baby take his/her first steps and keep them near you when walking in dangerous or crowded places.",
-        amount : 'JOD 9.55',
+        amount : 'Price :JOD 9.55',
+        price:9.55,
         category: "Healthy and Safety"
     },
 
@@ -99,7 +110,8 @@ const product = [
         title: "Baby Care Set",
         imageSrc : 'src="./pictures of items/care.jpg"',
         description :"Baby Care Set, 10 Piece Baby Health Set For Baby Daily Care With Comb Nail Scissors Baby Healthcare Kit Baby First Equipment Care Set For Newborn Gift",
-        amount : 'JOD 21.95',
+        amount : 'Price :JOD 21.95',
+        price:21.95,
         category: "Healthy and Safety"
     },
     {
@@ -107,7 +119,8 @@ const product = [
         title: "Pacifier",
         imageSrc : 'src="./pictures of items/paci.jpg"',
         description :"2 Options Matte Surface Baby Pacifier With Cover, Orthodontic& Cherry Round Shape Soother Pacifiers For Boy And Girl",
-        amount : 'JOD 2.85',
+        amount : 'Price :JOD 2.85',
+        price:2.85,
         category: "Pacifiers and soothers"
     },
     {
@@ -115,7 +128,8 @@ const product = [
         title: "Diapers",
         imageSrc : 'src="./pictures of items/diapers.jpg"',
         description :"The best diapers to handle newborns, blowouts, overnights, and more",
-        amount : 'JOD 8.95',
+        amount : 'Price :JOD 8.95',
+        price:8.95,
         category: "Diapering"
     }
 
@@ -367,12 +381,14 @@ const icon = $('.icon');
 icon.on('click',()=>{
     $('.item-page').html("");
     $('.main-page').hide();
-let amount = 0
+let totalCart = 0
     for (let index = 0; index < localStorage.length; index++) {
         console.log(localStorage);
         const nameLine = localStorage.key(index);
         console.log(nameLine);
-        const itemCart =JSON.parse(localStorage.getItem(nameLine));
+        
+        const itemCart =JSON.parse(localStorage.getItem(nameLine))||[];
+        console.log(JSON.parse(localStorage.getItem(nameLine)));
         console.log(itemCart);
 
         const box_cart = $(`<div></div>`);
@@ -385,20 +401,24 @@ let amount = 0
         box_cart.append(amount);
         box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
+        totalCart = totalCart + itemCart.price
+
         btn_delete_cart.on('click', function(){
-            console.log(itemCart);
             cart.splice(1,1,itemCart)
             box_cart.html('')
-            //amount = amount + cart[index].amount
-            localStorage.removeItem(nameLine)
-            // How can i deal the local Storage as array ??
-
-
-            
+            localStorage.removeItem(nameLine)      
         })
-        const totalAmount = $(`<h1>${amount}</h1>`)
-        box_cart.append(totalAmount)
+       
+        totalCart = totalCart + itemCart.price
+       console.log(totalCart);
+
+
     }
+    const price = $(`<div></div>`);
+    const cart_page = $('.totalCart');
+
+    const totalAmount = $(`<h1>The Total amount of your order:JOD </h1>`)
+    cart_page.append(totalAmount)
     
 
 })
@@ -422,7 +442,7 @@ const memory = (cart)=>{
         localStorage.setItem('item',toString)
     }
 }
-memory(cart) */
+memory(cart) *//* 
 
 console.log(localStorage.key(0));
-console.log(localStorage.getItem(localStorage.key(0)));
+console.log(localStorage.getItem(localStorage.key(0))); */
