@@ -423,7 +423,6 @@ let totalCart = 0
         
         const itemCart =JSON.parse(localStorage.getItem(nameLine))||[];
         console.log(JSON.parse(localStorage.getItem(nameLine)));
-        console.log(itemCart);
 
         const box_cart = $(`<div></div>`);
         const img = $(`<img ${itemCart.imageSrc} alt="">`)
@@ -435,6 +434,10 @@ let totalCart = 0
         box_cart.append(amount);
         box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
+
+        
+
+
         totalCart = totalCart + itemCart.price
 
         btn_delete_cart.css({
