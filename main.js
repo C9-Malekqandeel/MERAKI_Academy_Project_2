@@ -303,6 +303,8 @@ const render = (product)=> {
             <br>
             <br>`);
 
+            const description_box = $(`<div></div>`)
+
 
             const btn1 = $(`<button class="cartItem"> Add to Cart</button>`);
             const btn3 = $(`<button class="cartItem"> Home Page</button>`);
@@ -333,6 +335,8 @@ const render = (product)=> {
                 'font-size': 'xx-large',
             })
 
+
+
             item_page.append(title_item);
             item_page.append(box);
             box.append(img_item);
@@ -342,6 +346,7 @@ const render = (product)=> {
             inner_box.append(btn1);
             inner_box.append(btn2);
             item_page.append(description_item);
+            description_box.append(btn3)
             description_item.append(btn3);
 
             btn1.css({
@@ -365,7 +370,12 @@ const render = (product)=> {
                 'font-size': 'xx-large',
                 'font-weight': 'bold',
                 'border': '5px solid black',
-                'margin-right': '20px'
+                'margin-right': '20px',
+                'position':'relative',
+                'left':'20%'
+
+
+                
             })
 
             const next_page = function(){
@@ -404,6 +414,7 @@ const icon = $('.icon');
 icon.on('click',()=>{
     $('.item-page').html("");
     $('.main-page').hide();
+
 let totalCart = 0
     for (let index = 0; index < localStorage.length; index++) {
         console.log(localStorage);
@@ -426,12 +437,21 @@ let totalCart = 0
         cart_box.append(box_cart);
         totalCart = totalCart + itemCart.price
 
+        btn_delete_cart.css({
+            'background-color': '#f3200a',
+            'padding': '8px',
+            'font-size': '15px',
+            'font-weight': 'bolder',
+            'margin-left': '55px',
+            'cursor': 'grabbing',
+        })
+
         btn_delete_cart.on('click', function(){
             cart.splice(1,1,itemCart)
             box_cart.html('')
             localStorage.removeItem(nameLine)      
         })
-       
+       console.log(itemCart.price);
         totalCart = totalCart + itemCart.price
        console.log(totalCart);
 
