@@ -286,9 +286,27 @@ const render = (product)=> {
             const img_item = $(`<img ${product[index].imageSrc} alt="">`);
             const description_item = $(`<h1>${product[index].description}</h1>`);
             const amount_item = $(`<h1>${product[index].amount}</h1>`);
-            const btn1 = $(`<button class="cart"> Add to Cart</button>`);
-            const btn3 = $(`<button class="cart"> Home Page</button>`);
-            const btn2 = $(`<button class="cart"> Add to WishCart</button>`);
+
+            const rating = $(`
+            <br>
+            <br>
+            <h2>Ratings</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>`);
+
+
+            const btn1 = $(`<button class="cartItem"> Add to Cart</button>`);
+            const btn3 = $(`<button class="cartItem"> Home Page</button>`);
+            const btn2 = $(`<button class="cartItem"> Add to WishCart</button>`);
             box.css({
                 'border':'5px solid black',
                 'display': "grid",
@@ -311,11 +329,16 @@ const render = (product)=> {
                 'font-weight': 'bold',
             })
 
+            rating.css({
+                'font-size': 'xx-large',
+            })
+
             item_page.append(title_item);
             item_page.append(box);
             box.append(img_item);
             box.append(inner_box);
             inner_box.append(amount_item)
+            inner_box.append(rating);
             inner_box.append(btn1);
             inner_box.append(btn2);
             item_page.append(description_item);
@@ -337,12 +360,12 @@ const render = (product)=> {
                 'margin-left':"20px"
             })
             btn3.css({
-                'background-color': 'blue',
+                'background-color': '#83F059',
                 'padding': '25px',
-                'font-size': 'x-large',
+                'font-size': 'xx-large',
                 'font-weight': 'bold',
-                'border': '2 px solid black',
-                'margin': '20px'
+                'border': '5px solid black',
+                'margin-right': '20px'
             })
 
             const next_page = function(){

@@ -67,14 +67,24 @@ body{
     display: flex;
     margin-left: 70%;
     margin-top: 10px;
+    cursor: pointer;
 }
 .home {
     margin-right:50px ;
     margin-bottom: 25px;
 }
+.home:hover {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.2)
+  }
+  
 .icon{
     margin-top: 25px;
 }
+.icon:hover {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.2)
+  }
+  
+
 #titleMain{
     font-size: 25px;
     box-shadow: #83F059;
@@ -85,14 +95,27 @@ body{
     padding-top: 20px;
     border-radius: 20%;
     margin-left: 25%;
+    cursor: pointer;
 }
+#imgMain:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+
 #cartMain{
     padding: 10px;
     font-size: 25px;
     background-color: #83F059;
     margin-left: 30%;
+    border-radius: 10%;
+    cursor: pointer;
     
 }
+#cartMain:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+
 .item {
     border:#83F059 solid 2px;
 
@@ -135,6 +158,7 @@ body{
     display: grid;
     position: relative;
     left: 20%;
+    cursor: pointer;
 }
 
 .cart{
@@ -145,3 +169,11 @@ body{
     margin: 35px;
     padding: 35px;
 }
+.cartItem{
+    cursor: pointer;
+
+}
+
+.checked {
+    color: orange;
+  }
