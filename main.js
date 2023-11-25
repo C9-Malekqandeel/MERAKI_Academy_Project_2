@@ -204,17 +204,24 @@ console.log(Diapering);
 const anim = $('.anim-1')
 const ADDs = $('.ADDs');
 const ADD = $('.ADD');
-let current = 0;
+let current = 1;
+
+let width = 400;
+let animationSpeed = 1000;
+let pause = 3000;
+
 
 const startADD = ()=>{
     let interval = setInterval(() => {
-        ADDs.animate({'margin-top':"-=400px"},1000)
-        current++
-        if(current === 5){
-            current=0
-            // ADDs.css('margin-top':"0")
-        }
-    },5000);
+        ADDs.animate({'margin-top':`-=${width}px`},animationSpeed,()=>{
+            current++
+            if(current === 5){
+                current=1
+                ADDs.css('margin-top',"0")
+            }
+        })
+    },pause);
+    
 
     // setInterval(show,2000)
 }
