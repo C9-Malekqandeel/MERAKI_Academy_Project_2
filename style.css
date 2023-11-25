@@ -190,8 +190,15 @@ body{
 
 .imgCategory{
     width: 200px;
+    height: 150px;
     border-radius: 50%;
+    cursor: pointer;
 }
+
+.imgCategory:hover {
+    box-shadow: 5px 8px 20px 5px yellow
+  }
+
 .category{
     display: flex;
     background-color: #F0C659;
@@ -200,4 +207,15 @@ body{
     border: 10px solid yellow;
     padding: 2%;
     margin:4%
+}
+.Cate{
+    margin: 10%;
+}
+
+.info{
+    font-size: 30px;
+    border-bottom: 5px solid yellow;
+    display: flex;
+    justify-content: space-around;
+    color: #141802;
 }

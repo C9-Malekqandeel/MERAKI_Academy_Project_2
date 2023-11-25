@@ -228,13 +228,73 @@ const box_category =$('.category');
 const addCategory = ()=>{
     const createCategory = (categories)=>{
         for (let index = 0; index < categories.length; index++) {
-            console.log(categories[1]);
             let showCategory= $(`<div>
             <img class ="imgCategory" src="./pictures of items/${categories[index]}.jpg" alt="" >
-            <h4>${categories[index]}</h4>
+            <h4 class="info">${categories[index]}</h4>
             </div>`)
             box_category.append(showCategory)
-        }
+
+            showCategory.on('click',()=>{
+           
+                    $('.items').html("");
+                    $('.items').show();
+                    box_category.hide()
+                    //const renderCategory = (Clothing)
+
+
+                    const result=product.filter((e,i)=>
+                    {
+                        return e.category===categories[index]
+                    })
+                    render(result)
+
+                    $('.items').css({
+                        'background-color': '#F0EB58'
+                    
+                    })
+                
+
+                    // for (let index = 0; index < Clothing.length; index++) {
+                        
+                    // const imgCate = $(`<img ${Clothing[index].imageSrc} alt="">`);
+                    // console.log(Clothing[index]);
+                    // const titleCate = $(`<h3>${Clothing[index].title}</h3>`)
+                    // const items_Category = $(`<div class="Cate"></div>`);
+                    // items_Category.append(imgCate);
+                    // items_Category.append(titleCate);
+
+                        
+                    // }
+
+                    
+               
+            })
+            
+                    /* 
+                    for (let index = 0; index < Clothing.length; index++) {
+                    const img = $(`<img ${product[index].imageSrc} alt="">`);
+                    const title = $(`<h3>${product[index].title}</h3>`);
+                    const card = $(`
+                    <div class="item">
+                    <img id="imgMain" ${product[index].imageSrc} alt="">
+                    <div id="titleMain"><h3>${product[index].title}</h3> 
+                    </div>
+                    <div class="rate">
+                    <br>
+                    <h2>Reviews(s25)</h2>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    </div>`)
+                    
+                     */
+
+                }
+
+        
+    
     }
     createCategory(categories);
 
@@ -251,6 +311,7 @@ const cart_box = $('.cart')
 const wishCart = [];
 
 const render = (product)=> {
+console.log(product);
     for (let index = 0; index < product.length; index++) {
         const img = $(`<img ${product[index].imageSrc} alt="">`);
         const title = $(`<h3>${product[index].title}</h3>`);
@@ -543,6 +604,17 @@ home.on('click', ()=>{
     $('.cart').html("");
     $('.calculate').hide();
     $('.placeItem').hide();
+    box_category.show();
+    //$('.items').hide()
+    render(product)
+
+    $('.items').css({
+        'background-color': '#F0C659'
+    
+    })
+    
+
+
 
     
 
