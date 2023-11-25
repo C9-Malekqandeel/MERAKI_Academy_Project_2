@@ -20,6 +20,7 @@ body{
     font-weight: bold;
 }
 .animation{
+    margin-left: 70px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
     height: 500px;
@@ -29,13 +30,16 @@ body{
     margin-left: 4%;
     height: 420px;
     overflow: hidden;
+    justify-content: flex-start;
+
 }
 
 .anim-2{
     display: flex;
+    justify-content: flex-end;
     height: 400px;
-    gap: 70px;
-    margin-left: 50px;
+    gap: 50px;
+    margin-right: 200px;
 }
 
 .ADDs {
@@ -249,4 +253,21 @@ body{
     width: 850px;
     height: 50px;
 
+}
+
+.regis{
+    display: flex;
+    margin-left: 35%;
+    margin-bottom: 35px;
+    width: 500px;
+    padding: 10px;
+    font-size: 35px;
+}
+#create-account{
+    display: flex;
+    margin-left: 50%;
+    width: 150px;
+    font-size: 35px;
+    color: #061108;
+    background-color:#83F059;
 }

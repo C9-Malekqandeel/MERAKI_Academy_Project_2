@@ -207,8 +207,8 @@ const ADD = $('.ADD');
 let current = 1;
 
 let width = 400;
-let animationSpeed = 1000;
-let pause = 3000;
+let animationSpeed = 3000;
+let pause = 5000;
 
 
 const startADD = ()=>{
@@ -629,6 +629,59 @@ home.on('click', ()=>{
 
 
 // ----------- Register -----------
+
+const Register = $('#register')
+
+Register.on('click',()=>{
+    $('.main-page').hide();
+
+
+    const account = $(` <input class="regis" placeholder="Your Name" type="text">`);
+    const email = $(`<input class="regis" placeholder="Email" type="email">`);
+    const password = $(`<input class="regis" placeholder="Password" type="password">`);
+    const confirmPassword = $(`<input class="regis" placeholder=" Confirm Password" type="password">`);
+    const body = $('body');
+
+    const create = $(`<button id="create-account"> Create </button>`);
+
+    
+    body.append(account)
+    body.append(email);
+    body.append(password)
+    body.append(confirmPassword);
+    body.append(create)
+
+})
+
+const logIn = $(`#logIn`);
+logIn.on('click', ()=>{
+    $('.main-page').hide();
+    const account = $(` <input class="regis" placeholder="Your Name" type="text">`);
+    const email = $(`<input class="regis" placeholder="Email" type="email">`);
+    const password = $(`<input class="regis" placeholder="Password" type="password">`);
+    const body = $('body');
+
+    const yourAccount = $(`<button id="create-account"> LogIn</button>`);
+
+
+
+
+    body.append(account)
+    body.append(email);
+    body.append(password);
+    body.append(yourAccount)
+
+
+
+})
+
+
+
+
+
+
+
+
 /* 
 const signUp = $(`<h1>SignUp</h2>
 <br>
