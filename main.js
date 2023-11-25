@@ -220,6 +220,26 @@ const startADD = ()=>{
 }
 startADD()
 
+//--------------Category--------
+const categories =['Clothing', 'Feeding','Healthy and Safety', 'Pacifiers and soothers', 'Diapering'];
+
+const box_category =$('.category');
+
+const addCategory = ()=>{
+    const createCategory = (categories)=>{
+        for (let index = 0; index < categories.length; index++) {
+            console.log(categories[1]);
+            let showCategory= $(`<div>
+            <img class ="imgCategory" src="./pictures of items/${categories[index]}.jpg" alt="" >
+            <h4>${categories[index]}</h4>
+            </div>`)
+            box_category.append(showCategory)
+        }
+    }
+    createCategory(categories);
+
+}
+addCategory()
 //----------------------
 
 const box_item = $('.items')
