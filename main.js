@@ -239,6 +239,14 @@ const render = (product)=> {
         <img id="imgMain" ${product[index].imageSrc} alt="">
         <div id="titleMain"><h3>${product[index].title}</h3> 
         </div>
+        <div class="rate">
+        <br>
+        <h2>Reviews(s25)</h2>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
     </div>`)
     const itemClick = $('.item')
     const cartAdd = $('#cartMain');

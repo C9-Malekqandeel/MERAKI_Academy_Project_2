@@ -92,7 +92,9 @@ body{
     padding-left: 10px;
 }
 #imgMain{
-    padding-top: 20px;
+    padding-top: 25px;/* 
+    position: relative;
+    right: 35px; */
     border-radius: 20%;
     margin-left: 25%;
     cursor: pointer;
@@ -120,6 +122,9 @@ body{
     border:#83F059 solid 2px;
 
 }
+.item:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
 
 .boxCart{
     width:650px;
@@ -177,3 +182,8 @@ body{
 .checked {
     color: orange;
   }
+
+.rate{
+    font-size: 25px;
+    display: inline;
+}
