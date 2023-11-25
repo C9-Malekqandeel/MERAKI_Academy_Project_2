@@ -24,7 +24,7 @@ const product = [
         imageSrc : 'src="./pictures of items/blended tights.jpg"',
         description :"Cool Club Blended Tights Set, White Color, 2 Pieces",
         amount : 'Price :JOD 2.69',
-        price:2.69,
+        Price: 2.69,
         category: "Clothing"
     },
 
@@ -35,7 +35,7 @@ const product = [
         imageSrc : 'src="./pictures of items/jacket.jpg"',
         description :"New Baby Boys Cute Graphic Hooded Padded Coat, Kids Warm Zip Up Long Sleeve Jacket, Winter/fall",
         amount : 'Price :JOD 11.25',
-        price:11.25,
+        Price: 11.25,
         category: "Clothing"
     },
 
@@ -45,7 +45,7 @@ const product = [
         imageSrc : 'src="./pictures of items/sweater.jpg"',
         description :"Baby Boy's Knit Sweater, All-match Warm Casual Pullover Top For Outdoor Travel",
         amount : 'Price :JOD 13.12',
-        price:13.12,
+        Price: 13.12,
         category: "Clothing"
     },
     {
@@ -54,7 +54,7 @@ const product = [
         imageSrc : 'src="./pictures of items/slipper.jpg"',
         description :"Cool Club Children Home Slipper, Christmas Design, Color : Light Grey,Gender: Both,recommended age : 4-5 years , size : 27-28",
         amount : 'Price :JOD 4.35',
-        price:4.35,
+        Price: 4.35,
         category: "Clothing"
     },
     {
@@ -63,7 +63,7 @@ const product = [
         imageSrc : 'src="./pictures of items/bottle.jpg"',
         description :"The Perfect Nursing Bottle for Newborns: Keep Baby Safe While Drinking Water & Milk!",
         amount : 'Price :JOD 2.54',
-        price:2.54,
+        Price: 2.54,
         category: "Feeding"
     },
     {
@@ -72,7 +72,7 @@ const product = [
         imageSrc : 'src="./pictures of items/cups.jpg"',
         description :"Baby Learning Drinking Cup, Baby Sippy Cup, BPA Free",
         amount : 'Price :JOD 3.85',
-        price:3.85,
+        Price: 3.85,
         category: "Feeding"
     },
     {
@@ -81,7 +81,7 @@ const product = [
         imageSrc : 'src="./pictures of items/storage.jpg"',
         description :"Baby Formula Dispenser, 4 Layers Stackable Formula Container, Milk Powder Formula Dispenser, Baby Feeding Travel Storage Container, BPA Free",
         amount : 'Price :JOD 5.25',
-        price:5.25,
+        Price: 5.25,
         category: "Feeding"
     },
 
@@ -91,7 +91,7 @@ const product = [
         imageSrc : 'src="./pictures of items/nipple.jpg"',
         description :"Tommee Tippee Closer To Nature Teats Nipples Fast Flow Teats 6m+ (Pack of 2)",
         amount : 'Price :JOD 2.85',
-        price:2.85,
+        Price: 2.85,
         category: "Feeding"
     },
 
@@ -101,7 +101,7 @@ const product = [
         imageSrc : 'src="./pictures of items/jem.jpg"',
         description :"This First steps Safety Reins allow you to help baby take his/her first steps and keep them near you when walking in dangerous or crowded places.",
         amount : 'Price :JOD 9.55',
-        price:9.55,
+        Price: 9.55,
         category: "Healthy and Safety"
     },
 
@@ -111,7 +111,7 @@ const product = [
         imageSrc : 'src="./pictures of items/care.jpg"',
         description :"Baby Care Set, 10 Piece Baby Health Set For Baby Daily Care With Comb Nail Scissors Baby Healthcare Kit Baby First Equipment Care Set For Newborn Gift",
         amount : 'Price :JOD 21.95',
-        price:21.95,
+        Price: 21.95,
         category: "Healthy and Safety"
     },
     {
@@ -120,7 +120,7 @@ const product = [
         imageSrc : 'src="./pictures of items/paci.jpg"',
         description :"2 Options Matte Surface Baby Pacifier With Cover, Orthodontic& Cherry Round Shape Soother Pacifiers For Boy And Girl",
         amount : 'Price :JOD 2.85',
-        price:2.85,
+        Price: 2.85,
         category: "Pacifiers and soothers"
     },
     {
@@ -129,7 +129,7 @@ const product = [
         imageSrc : 'src="./pictures of items/diapers.jpg"',
         description :"The best diapers to handle newborns, blowouts, overnights, and more",
         amount : 'Price :JOD 8.95',
-        price:8.95,
+        Price: 8.95,
         category: "Diapering"
     }
 
@@ -386,7 +386,7 @@ const render = (product)=> {
             btn3.on('click',next_page)
             $('.item-page').show()
 
-            localStorage.setItem("item",product[index])
+           // localStorage.setItem("item",product[index])
 
 
             btn1.on('click',()=>{
@@ -414,8 +414,11 @@ const icon = $('.icon');
 icon.on('click',()=>{
     $('.item-page').html("");
     $('.main-page').hide();
+    $('.calculate').hide();
 
-let totalCart = 0
+
+let totalCart = 0;
+
     for (let index = 0; index < localStorage.length; index++) {
         console.log(localStorage);
         const nameLine = localStorage.key(index);
@@ -424,7 +427,7 @@ let totalCart = 0
         const itemCart =JSON.parse(localStorage.getItem(nameLine))||[];
         console.log(JSON.parse(localStorage.getItem(nameLine)));
 
-        const box_cart = $(`<div></div>`);
+        const box_cart = $(`<div class="calculate"></div>`);
         const img = $(`<img ${itemCart.imageSrc} alt="">`)
         const title_cart = $(`<h3>${itemCart.title}</h3>`)
         const amount = $(`<h3>${itemCart.amount}</h3>`)
@@ -438,7 +441,7 @@ let totalCart = 0
         
 
 
-        totalCart = totalCart + itemCart.price
+        //totalCart = totalCart + itemCart.price
 
         btn_delete_cart.css({
             'background-color': '#f3200a',
@@ -454,20 +457,55 @@ let totalCart = 0
             box_cart.html('')
             localStorage.removeItem(nameLine)      
         })
-       console.log(itemCart.price);
-        totalCart = totalCart + itemCart.price
-       console.log(totalCart);
+        //console.log(itemCart.Price);
+        let price_item = itemCart.Price
+
+        console.log(itemCart.Price);
+       
+        totalCart = totalCart + price_item
+
+        console.log(totalCart);
 
 
     }
-    const price = $(`<div></div>`);
+    
+    const box_checkout = $(`<div class="checkout" ></div>`);
+    const btn_checkout = $(`<button class="calculate" >Place your Order</button>`)
+
     const cart_page = $('.totalCart');
 
-    const totalAmount = $(`<h1>The Total amount of your order:JOD </h1>`)
-    cart_page.append(totalAmount)
-    
+    const totalAmount = $(`<h1 class="calculate">The Total amount of your order:  ${totalCart} JOD </h1>`)
+    //box_checkout.append(totalAmount);
+    cart_page.append(totalAmount);
+    cart_page.append(btn_checkout)
+    //box_checkout.append(cart_page)
+     
+    totalAmount.css({
 
+    'font-size': '35px',
+    'display': 'flex',
+    'justify-content': 'space-around',
+    'font-weight': 'lighter',
+    'border': '#C2F059 solid 10px',
+    'margin': '35px',
+    'padding': '35px',
+    })
+
+    btn_checkout.css({
+    'padding': '20px',
+    'font-size': '15px',
+    'font-weight': 'bolder',
+    'margin-left': '35px',
+    'background-color': '#83F059',
+    'cursor': 'pointer',
+    'border': '#C2F059 solid 10px',
+    })
+
+
+
+   // totalAmount.html("")
 })
+
 
 //------------
 const home = $('.home');
@@ -475,6 +513,10 @@ home.on('click', ()=>{
     $('.item-page').html("");
     $('.main-page').show();
     $('.cart').html("");
+    $('.calculate').hide();
+    $('.placeItem').hide();
+
+    
 
 })
 
