@@ -621,6 +621,15 @@ home.on('click', ()=>{
 })
 
 
+// ----------- Register -----------
+/* 
+const signUp = $(`<h1>SignUp</h2>
+<br>
+<h1>SignIn</h2>`);
+
+const header = $('.Sign');
+header.append(signUp); */
+
 
 /* 
 const memory = (cart)=>{

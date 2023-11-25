@@ -65,9 +65,10 @@ body{
 }
 .btn {
     display: flex;
-    margin-left: 70%;
-    margin-top: 10px;
-    cursor: pointer;
+
+    margin-left: 20%;
+/*     margin-top: 10px;
+ */    cursor: pointer;
 }
 .home {
     margin-right:50px ;
@@ -78,7 +79,7 @@ body{
   }
   
 .icon{
-    margin-top: 25px;
+    margin-top: 50px;
 }
 .icon:hover {
     box-shadow: 5px 8px 20px 5px yellow
@@ -218,4 +219,33 @@ body{
     display: flex;
     justify-content: space-around;
     color: #141802;
+}
+.Sign {
+    padding: 40px;
+}
+
+
+.lineFeatures {
+    position: relative;
+    left: 500px;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+}
+.Sign{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    gap: 30px;
+}
+
+.search{
+    position: relative;
+    left: 500px;
+    margin-top: 55px;
+    width: 850px;
+    height: 50px;
+    border-radius: 10%;
+
 }
