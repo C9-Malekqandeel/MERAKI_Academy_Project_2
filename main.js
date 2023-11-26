@@ -241,12 +241,18 @@ const addCategory = ()=>{
             </div>`)
             box_category.append(showCategory)
 
+
             showCategory.on('click',()=>{
-           
+                    $('.Box-items').html("")
                     $('.items').html("");
                     $('.items').show();
                     box_category.hide()
                     //const renderCategory = (Clothing)
+
+                    console.log(categories[index]);
+
+                    const head = $(`<h2 id="headOfCategory">${categories[index]}</h2>`)
+                    $('.Box-items').append(head)
 
 
                     const result=product.filter((e,i)=>
@@ -259,7 +265,7 @@ const addCategory = ()=>{
                         'background-color': '#F0EB58'
                     
                     })
-                
+
 
                     // for (let index = 0; index < Clothing.length; index++) {
                         
@@ -313,6 +319,8 @@ const box_item = $('.items')
 
 const cart = [];
 const cart_box = $('.cart')
+
+$('.cart').hide()
 
 
 const wishCart = [];
@@ -508,6 +516,7 @@ render(product);
 
 const icon = $('.icon');
 icon.on('click',()=>{
+    $('.cart').show()
     $('.item-page').html("");
     $('.main-page').hide();
     $('.calculate').hide();
@@ -599,13 +608,16 @@ let totalCart = 0;
 
 
 
-   // totalAmount.html("")
 })
 
+$('#headOfCategory').html("")
 
 //------------
 const home = $('.home');
 home.on('click', ()=>{
+    $('.Box-items').html("")
+
+    $('.cart').hide()
     $('.item-page').html("");
     $('.main-page').show();
     $('.cart').html("");
@@ -653,10 +665,33 @@ Register.on('click',()=>{
 
 })
 
+
+const clickIn = $('#create-account')
+
+clickIn.on('click',()=>{
+    console.log("$('.regis').val()");
+})
+
+
+
+class account {
+    constructor (name,email,password){
+        this.name= name;
+        this.email=email;
+        this.password=password;
+    }
+}
+
+//----------------------------
+
+
+
+
+
 const logIn = $(`#logIn`);
 logIn.on('click', ()=>{
     $('.main-page').hide();
-    const account = $(` <input class="regis" placeholder="Your Name" type="text">`);
+    const Name = $(` <input class="regis" placeholder="Your Name" type="text">`);
     const email = $(`<input class="regis" placeholder="Email" type="email">`);
     const password = $(`<input class="regis" placeholder="Password" type="password">`);
     const body = $('body');
@@ -666,7 +701,7 @@ logIn.on('click', ()=>{
 
 
 
-    body.append(account)
+    body.append(Name)
     body.append(email);
     body.append(password);
     body.append(yourAccount)
@@ -674,9 +709,31 @@ logIn.on('click', ()=>{
 
 
 })
+// -----------------Search
+
+const Search = $('.search');
+const btnSearch = $('.search h4');
+Search.on('click',()=>{
+    let text = $('.search').val();
+    console.log(text);
+})
 
 
 
+
+
+
+
+/* 
+const accountInfo = (name, email,password)=>{
+    const info={};
+
+    info.name = name;
+    info.email=email;
+    info.password = password;
+
+}
+ */
 
 
 

@@ -247,12 +247,21 @@ body{
 }
 
 .search{
+    display: flex;
     position: relative;
     left: 450px;
+}
+.search h4{
+    margin-top: 65px;
+    font-weight: bolder;
+    cursor: pointer;
+
+}
+.search input{
     margin-top: 55px;
     width: 850px;
     height: 50px;
-
+    font-size: x-large;
 }
 
 .regis{
@@ -270,4 +279,12 @@ body{
     font-size: 35px;
     color: #061108;
     background-color:#83F059;
+}
+
+#headOfCategory{
+    font-size: 85px;
+    color: #83F059;
+    border-bottom: #83F059 10px solid;
+    margin-left: 10%;
+    margin-right: 20%;
 }
