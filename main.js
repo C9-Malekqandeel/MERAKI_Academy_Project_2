@@ -616,7 +616,7 @@ $('#headOfCategory').html("")
 const home = $('.home');
 home.on('click', ()=>{
     $('.Box-items').html("")
-
+    $('.animation').show();
     $('.cart').hide()
     $('.item-page').html("");
     $('.main-page').show();
@@ -711,11 +711,24 @@ logIn.on('click', ()=>{
 })
 // -----------------Search
 
-const Search = $('.search');
-const btnSearch = $('.search h4');
+const Search = $('.search .h4');
+const btnSearch = $('#btnSearch');
 Search.on('click',()=>{
-    let text = $('.search').val();
-    console.log(text);
+    $('.Box-items').html("")
+    $('.items').html("");
+    $('.items').show();
+    box_category.hide();
+    $('.animation').hide();
+
+
+    let text = $('#btnSearch').val();
+    
+    const search =product.filter((e,i)=>
+                    {
+                        return e.title === text
+                    })
+                    render(search)
+
 })
 
 

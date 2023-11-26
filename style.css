@@ -250,13 +250,23 @@ body{
     display: flex;
     position: relative;
     left: 450px;
+    gap: 10px;
 }
-.search h4{
-    margin-top: 65px;
+.search .h4{
+    margin-top: 40px;
+    width: 50px;
     font-weight: bolder;
     cursor: pointer;
+    padding-bottom: 0;
+    margin-bottom: 0;
 
 }
+.search .h4:hover {
+    box-shadow: 5px 8px 20px 5px yellow
+  }
+
+
+
 .search input{
     margin-top: 55px;
     width: 850px;
