@@ -206,7 +206,7 @@ const ADDs = $('.ADDs');
 const ADD = $('.ADD');
 let current = 1;
 
-let width = 400;
+let width = 600;
 let animationSpeed = 3000;
 let pause = 5000;
 
@@ -615,6 +615,9 @@ $('#headOfCategory').html("")
 //------------
 const home = $('.home');
 home.on('click', ()=>{
+    $('.regis').hide()
+    $('#create-account').hide()
+    $('#create-account').html("")
     $('.Box-items').html("")
     $('.animation').show();
     $('.cart').hide()

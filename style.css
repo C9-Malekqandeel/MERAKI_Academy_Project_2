@@ -20,26 +20,35 @@ body{
     font-weight: bold;
 }
 .animation{
+    height: 100vh;
     margin-left: 70px;
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-areas:"anim-1 anim-2" "anim-1 anim-2" ;
+
     height: 500px;
 }
 #anim-1 {
     /* width: 120vw; */
     margin-left: 4%;
-    height: 420px;
+    height: 600px;
     overflow: hidden;
-    justify-content: flex-start;
+    grid-area: anim-1;
+
+
+    
 
 }
 
 .anim-2{
-    display: flex;
-    justify-content: flex-end;
-    height: 400px;
-    gap: 50px;
-    margin-right: 200px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+    gap: 5px;
+
+
 }
 
 .ADDs {
@@ -212,8 +221,9 @@ body{
     gap: 20px;
     justify-content: space-around;
     border: 10px solid yellow;
-    padding: 2%;
-    margin:4%
+    padding: 2%;    
+    margin:5%
+    
 }
 .Cate{
     margin: 10%;
@@ -265,6 +275,9 @@ body{
     box-shadow: 5px 8px 20px 5px yellow
   }
 
+  .Sign h3:hover {
+    box-shadow: 5px 8px 20px 5px yellow
+  }
 
 
 .search input{
