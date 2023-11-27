@@ -222,7 +222,7 @@ body{
     justify-content: space-around;
     border: 10px solid yellow;
     padding: 2%;    
-    margin:5%
+    margin:4%
     
 }
 .Cate{
@@ -295,7 +295,8 @@ body{
     padding: 10px;
     font-size: 35px;
 }
-#create-account{
+
+.create-account{
     display: flex;
     margin-left: 50%;
     width: 150px;

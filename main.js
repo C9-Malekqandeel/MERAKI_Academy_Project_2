@@ -651,13 +651,13 @@ Register.on('click',()=>{
     $('.main-page').hide();
 
 
-    const account = $(` <input class="regis" placeholder="Your Name" type="text">`);
-    const email = $(`<input class="regis" placeholder="Email" type="email">`);
-    const password = $(`<input class="regis" placeholder="Password" type="password">`);
-    const confirmPassword = $(`<input class="regis" placeholder=" Confirm Password" type="password">`);
+    const account = $(` <input class="regis name" placeholder="Your Name" type="text">`);
+    const email = $(`<input class="regis email" placeholder="Email" type="email">`);
+    const password = $(`<input class="regis password" placeholder="Password" type="password">`);
+    const confirmPassword = $(`<input class="regis password" placeholder=" Confirm Password" type="password">`);
     const body = $('body');
 
-    const create = $(`<button id="create-account"> Create </button>`);
+    const create = $(`<button class="create-account"> Create </button>`);
 
     
     body.append(account)
@@ -666,48 +666,105 @@ Register.on('click',()=>{
     body.append(confirmPassword);
     body.append(create)
 
-})
+    
+    const clickIn = $('.create-account')
 
 
-const clickIn = $('#create-account')
+    clickIn.on('click',()=>{
+    console.log($('.regis.name').val());
+    console.log($('.regis.email').val());
+    console.log($('.regis.password').val());
 
-clickIn.on('click',()=>{
-    console.log("$('.regis').val()");
-})
+    nameOfUser=$('.regis.name').val();
+    emailOfUser= $('.regis.email').val();
+    passwordOfUser=$('.regis.password').val();
 
 
 
-class account {
-    constructor (name,email,password){
-        this.name= name;
-        this.email=email;
-        this.password=password;
+    const dataAccounts = [];
+
+    class account {
+        constructor (name,email,password){
+            this.name= name;
+            this.email=email;
+            this.password=password;
+        }
     }
-}
+    const newAccount = new account(nameOfUser,emailOfUser,passwordOfUser);
+    console.log(newAccount);
+
+    dataAccounts.push(newAccount);
+
+    console.log(dataAccounts);
+
+    const memoryOfUser=(dataAccounts)=>{
+        for (let index = 0; index < dataAccounts.length; index++) {
+            const toString =JSON.stringify(dataAccounts[index])
+            localStorage.setItem('user',toString);
+
+        }
+    }
+    memoryOfUser(dataAccounts);
+    })
+})
+
+
+
+
+
 
 //----------------------------
-
-
 
 
 
 const logIn = $(`#logIn`);
 logIn.on('click', ()=>{
     $('.main-page').hide();
-    const Name = $(` <input class="regis" placeholder="Your Name" type="text">`);
-    const email = $(`<input class="regis" placeholder="Email" type="email">`);
-    const password = $(`<input class="regis" placeholder="Password" type="password">`);
+    
+    const Name = $(` <input class="regis userName" placeholder="Your Name" type="text">`);
+    const email = $(`<input class="regis userEmail " placeholder="Email" type="email">`);
+    const password = $(`<input class="regis userPassword" placeholder="Password" type="password">`);
     const body = $('body');
 
-    const yourAccount = $(`<button id="create-account"> LogIn</button>`);
-
-
-
+    const yourAccount = $(`<button class="create-account user"> LogIn</button>`);
 
     body.append(Name)
     body.append(email);
     body.append(password);
-    body.append(yourAccount)
+    body.append(yourAccount);
+
+    const user =JSON.parse(localStorage.getItem("user"));
+
+    console.log(user.name);
+    console.log(user.email);
+    console.log(user.password);
+
+    console.log($('.create-account.user'));
+    const logInUser = $('.create-account.user');
+
+    logInUser.on('click',()=>{
+        console.log("test");
+        const tryLogIn =()=>{
+/* 
+
+            console.log($('.regis.userName').val());
+            console.log($('.regis.userEmail').val());
+            console.log($('.regis.userPassword').val());
+      
+ */
+            if($('.regis.userName').val()===user.name && $('.regis.userEmail').val() === user.email && $('.regis.userPassword').val()=== user.password){
+
+                $('.main-page').show();
+                $(`#logIn`).hide();              
+                
+                const nameHeader=$(`<h2>${user.name}</h2>`);
+                $('.Sign').append(nameHeader);
+
+            }
+        }
+        tryLogIn()
+
+    })
 
 
 
