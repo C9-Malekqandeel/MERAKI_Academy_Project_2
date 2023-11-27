@@ -526,9 +526,13 @@ let totalCart = 0;
 
     for (let index = 0; index < localStorage.length; index++) {
         console.log(localStorage);
+
         const nameLine = localStorage.key(index);
         console.log(nameLine);
         
+        
+        if (nameLine !== "user"){
+
         const itemCart =JSON.parse(localStorage.getItem(nameLine))||[];
         console.log(JSON.parse(localStorage.getItem(nameLine)));
 
@@ -543,7 +547,9 @@ let totalCart = 0;
         box_cart.append(btn_delete_cart);
         cart_box.append(box_cart);
 
-        
+
+
+        }
 
 
         //totalCart = totalCart + itemCart.price
@@ -606,7 +612,7 @@ let totalCart = 0;
     'border': '#C2F059 solid 10px',
     })
 
-
+   // }
 
 })
 
@@ -616,8 +622,8 @@ $('#headOfCategory').html("")
 const home = $('.home');
 home.on('click', ()=>{
     $('.regis').hide()
-    $('#create-account').hide()
-    $('#create-account').html("")
+    $('.create-account').hide()
+    $('.create-account').html("")
     $('.Box-items').html("")
     $('.animation').show();
     $('.cart').hide()
@@ -638,7 +644,7 @@ home.on('click', ()=>{
 
 
 
-    
+
 
 })
 
@@ -649,6 +655,10 @@ const Register = $('#register')
 
 Register.on('click',()=>{
     $('.main-page').hide();
+    $('.regis.userName').hide();
+    $('.regis.userEmail').hide();
+    $('.regis.userPassword').hide();
+    $('.create-account.user').hide();
 
 
     const account = $(` <input class="regis name" placeholder="Your Name" type="text">`);
@@ -657,7 +667,7 @@ Register.on('click',()=>{
     const confirmPassword = $(`<input class="regis password" placeholder=" Confirm Password" type="password">`);
     const body = $('body');
 
-    const create = $(`<button class="create-account"> Create </button>`);
+    const create = $(`<button class="create-account create"> Create </button>`);
 
     
     body.append(account)
@@ -667,7 +677,7 @@ Register.on('click',()=>{
     body.append(create)
 
     
-    const clickIn = $('.create-account')
+    const clickIn = $('.create-account.create')
 
 
     clickIn.on('click',()=>{
@@ -707,6 +717,7 @@ Register.on('click',()=>{
     memoryOfUser(dataAccounts);
     })
 })
+//$('#register').html("")
 
 
 
@@ -720,6 +731,10 @@ Register.on('click',()=>{
 const logIn = $(`#logIn`);
 logIn.on('click', ()=>{
     $('.main-page').hide();
+    $('.regis.name').hide();
+    $('.regis.email').hide();
+    $('.regis.password').hide();
+    $('.create-account.create').hide();
     
     const Name = $(` <input class="regis userName" placeholder="Your Name" type="text">`);
     const email = $(`<input class="regis userEmail " placeholder="Email" type="email">`);
