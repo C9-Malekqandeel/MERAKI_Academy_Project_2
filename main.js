@@ -538,8 +538,8 @@ let totalCart = 0;
 
         const box_cart = $(`<div class="calculate"></div>`);
         const img = $(`<img ${itemCart.imageSrc} alt="">`)
-        const title_cart = $(`<h3>${itemCart.title}</h3>`)
-        const amount = $(`<h3>${itemCart.amount}</h3>`)
+        const title_cart = $(`<h3 id="titleOfItem">${itemCart.title}</h3>`)
+        const amount = $(`<h3 id="titleOfItem">${itemCart.amount}</h3>`)
         const btn_delete_cart = $(`<button>Remove</button>`)
         box_cart.append(img);
         box_cart.append(title_cart);
@@ -823,6 +823,7 @@ changeMode.on('click',()=>{
     $('.category').css("background-color","rgb(35 35 52)")
     $('.item-page').css("color","white")
     $('#titleOfItem').css("color","white")
+    $('.calculate').css("color","white")
 
 })
 
