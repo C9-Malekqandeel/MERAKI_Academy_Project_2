@@ -376,7 +376,7 @@ console.log(product);
         card.on('click',()=>{
             $('.main-page').hide();
             const item_page = $('.item-page')
-            const title_item = $(`<h1>${product[index].title}</h1>`);
+            const title_item = $(`<h1 id="titleOfItem">${product[index].title}</h1>`);
             const box = $(`<div></div>`)
             const inner_box = $(`<div></div>`)
 
@@ -811,6 +811,20 @@ Search.on('click',()=>{
 })
 
 
+//------------DarkMode---------
+
+const changeMode = $('.dark-mode');
+changeMode.on('click',()=>{
+    $('body').css("background-color","#000000");
+    $('.items').css({"background-color":"rgb(108 103 103)",
+"color":"white"})
+    $('.item').css("background-color","rgb(35 35 52)")
+    $('.info').css("color","white")
+    $('.category').css("background-color","rgb(35 35 52)")
+    $('.item-page').css("color","white")
+    $('#titleOfItem').css("color","white")
+
+})
 
 
 
