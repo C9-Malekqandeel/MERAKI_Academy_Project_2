@@ -531,7 +531,7 @@ let totalCart = 0;
         console.log(nameLine);
         
         
-        if (nameLine !== "user"){
+        //if (nameLine !== "user"){
 
         const itemCart =JSON.parse(localStorage.getItem(nameLine))||[];
         console.log(JSON.parse(localStorage.getItem(nameLine)));
@@ -549,7 +549,7 @@ let totalCart = 0;
 
 
 
-        }
+        
 
 
         //totalCart = totalCart + itemCart.price
@@ -612,7 +612,7 @@ let totalCart = 0;
     'border': '#C2F059 solid 10px',
     })
 
-   // }
+//}
 
 })
 
@@ -692,12 +692,13 @@ Register.on('click',()=>{
 
 
     const dataAccounts = [];
-
+    console.log();
     class account {
         constructor (name,email,password){
             this.name= name;
             this.email=email;
             this.password=password;
+            //this.cart
         }
     }
     const newAccount = new account(nameOfUser,emailOfUser,passwordOfUser);
@@ -706,11 +707,14 @@ Register.on('click',()=>{
     dataAccounts.push(newAccount);
 
     console.log(dataAccounts);
-
+    /* 
+    const infoAccounts = JSON.stringify(dataAccounts)
+    localStorage.setItem(dataAccounts,infoAccounts)
+ */
     const memoryOfUser=(dataAccounts)=>{
         for (let index = 0; index < dataAccounts.length; index++) {
             const toString =JSON.stringify(dataAccounts[index])
-            localStorage.setItem('user',toString);
+            localStorage.setItem(nameOfUser,toString);
 
         }
     }
@@ -748,7 +752,7 @@ logIn.on('click', ()=>{
     body.append(password);
     body.append(yourAccount);
 
-    const user =JSON.parse(localStorage.getItem("user"));
+    const user =JSON.parse(localStorage.getItem('user'));
 
     console.log(user.name);
     console.log(user.email);
@@ -760,13 +764,13 @@ logIn.on('click', ()=>{
     logInUser.on('click',()=>{
         console.log("test");
         const tryLogIn =()=>{
-/* 
+
 
             console.log($('.regis.userName').val());
             console.log($('.regis.userEmail').val());
             console.log($('.regis.userPassword').val());
       
- */
+ 
             if($('.regis.userName').val()===user.name && $('.regis.userEmail').val() === user.email && $('.regis.userPassword').val()=== user.password){
 
                 $('.main-page').show();
