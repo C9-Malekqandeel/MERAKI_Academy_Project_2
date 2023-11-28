@@ -714,7 +714,7 @@ Register.on('click',()=>{
     const memoryOfUser=(dataAccounts)=>{
         for (let index = 0; index < dataAccounts.length; index++) {
             const toString =JSON.stringify(dataAccounts[index])
-            localStorage.setItem(nameOfUser,toString);
+            localStorage.setItem("user",toString);
 
         }
     }
